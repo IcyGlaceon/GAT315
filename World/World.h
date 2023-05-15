@@ -19,6 +19,6 @@ public:
 	static glm::vec2 gravity;
 
 private:
-	std::list<class Body*> m_bodies;
+	std::vector<class Body*> m_bodies;
 	std::vector<class ForceGenerator*> m_forceGenerators;
 };

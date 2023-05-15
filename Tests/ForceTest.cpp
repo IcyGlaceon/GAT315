@@ -1,12 +1,12 @@
 #include "ForceTest.h"
 #include "../Body/Body.h"
-#include "../GravGen.h"
+#include "../GravForce.h"
 
 void ForceTest::Initialize()
 {
 	Test::Initialize();
 
-	auto forceGenerator = new GravGen(3000);
+	auto forceGenerator = new GravForce(400);
 	m_world->AddForceGenerator(forceGenerator);
 }
 

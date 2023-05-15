@@ -15,9 +15,14 @@ World::~World()
 
 void World::Step(float dt)
 {
-	for (auto forceGenerator : m_forceGenerators)
+	if (!m_bodies.empty() && !m_forceGenerators.empty()) 
 	{
-		forceGenerator->Apply(m_bodies);
+		std::vector<Body*> bodies(m_bodies.begin(),m_bodies.end());
+
+		for (auto forceGenerator : m_forceGenerators)
+		{
+			forceGenerator->Apply(bodies);
+		}
 	}
 
 	for (auto body : m_bodies)
@@ -41,7 +46,6 @@ void World::AddBody(Body* body)
 
 void World::RemoveBody(Body* body)
 {
-	m_bodies.remove(body);
 }
 
 void World::AddForceGenerator(ForceGenerator* forceGenerator)

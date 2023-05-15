@@ -78,7 +78,7 @@
     <ClCompile Include="Physics\ForceGenerator.cpp">
       <Filter>Source Files\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="GravGen.cpp">
+    <ClCompile Include="GravForce.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,7 +125,7 @@
     <ClInclude Include="World\World.h">
       <Filter>Source Files\World</Filter>
     </ClInclude>
-    <ClInclude Include="GravGen.h">
+    <ClInclude Include="GravForce.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
