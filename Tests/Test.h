@@ -1,10 +1,10 @@
 #pragma once
-#include "../Graphics/Graphics.h"
-#include "../Input/Input.h"
-#include "../Math/Time.h"
-#include "../Math/Random.h"
-#include "../World/World.h"
-#include "../Shapes/CircleShape.h"
+#include "../Engine/Graphics/Graphics.h"
+#include "../Engine/Input/Input.h"
+#include "../Engine/Math/Time.h"
+#include "../Engine/Math/Random.h"
+#include "../Engine/World/World.h"
+#include "../Engine/Shapes/CircleShape.h"
 
 class Test
 {

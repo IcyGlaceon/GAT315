@@ -1,5 +1,5 @@
 #include "GravForce.h"
-#include "Body/Body.h"
+#include "../../Engine/Body/Body.h"
 
 void GravForce::Apply(std::vector<class Body*> bodies)
 {
@@ -22,7 +22,7 @@ void GravForce::Apply(std::vector<class Body*> bodies)
 
 			glm::vec2 ndirection = glm::normalize(direction);
 			bodyA->ApplyForce(ndirection * force);
-			bodyB->ApplyForce(ndirection * force);
+			bodyB->ApplyForce(-ndirection * force);
 
 		}
 	}
