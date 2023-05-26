@@ -10,5 +10,5 @@ public:
 	virtual void FixedUpdate() override;
 	virtual void Render() override;
 protected:
-
+	class Body* m_user{ nullptr };
 };

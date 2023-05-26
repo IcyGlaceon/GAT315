@@ -11,5 +11,5 @@ public:
 	virtual void Render() override;
 protected:
 	class Body* m_anchor{ nullptr };
-
+	class Body* m_user{ nullptr };
 };

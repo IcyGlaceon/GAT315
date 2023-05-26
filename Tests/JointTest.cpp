@@ -14,6 +14,9 @@ void JointTest::Initialize()
 {
 	Test::Initialize();
 
+	m_user = new Body(new CircleShape(1, { 0, 1, 0, 1 }), { 0, 0 }, { 0, 0 }, 1, Body::KINEMATIC);
+	m_world->AddBody(m_user);
+
 	m_anchor = new Body(new CircleShape(1, { 1, 1, 1, 1 }), { 0, 0 }, { 0, 0 }, 0, Body::KINEMATIC);
 	m_world->AddBody(m_anchor);
 
@@ -73,15 +76,17 @@ void JointTest::Initialize()
 		prevB = bodyB;
 	}
 #endif
-
-	
-
 }
 
 void JointTest::Update()
 {
 	Test::Update();
-	m_anchor->position = m_graphics->ScreenToWorld(m_input->GetMousePosition());
+
+	glm::vec2 position = m_graphics->ScreenToWorld(m_input->GetMousePosition());
+	m_user->velocity = position - m_user->position;
+	m_user->position = position;
+
+	m_anchor->position = position;
 }
 
 void JointTest::FixedUpdate()
@@ -92,5 +97,4 @@ void JointTest::FixedUpdate()
 void JointTest::Render()
 {
 	m_world->Draw(m_graphics);
-	m_graphics->DrawCircle(m_input->GetMousePosition(), 10, { randomf(), randomf(), randomf(), 1 });
 }
